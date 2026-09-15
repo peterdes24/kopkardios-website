@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kontak - KSP KOPKARDIOS</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #16324f;
+    background: #f5fbff;
+}
+
+header {
+    background: white;
+    box-shadow: 0 3px 15px rgba(0,0,0,.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 12px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-area img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.logo-text h2 {
+    color: #0878c9;
+    font-size: 21px;
+}
+
+.logo-text p {
+    font-size: 12px;
+    color: #64748b;
+}
+
+nav {
+    display: flex;
+    gap: 7px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #24415d;
+    padding: 9px 12px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+nav a:hover,
+nav a.active {
+    background: #0878c9;
+    color: white;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    color: #0878c9;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+
+    padding: 100px 20px;
+
+    color: white;
+    text-align: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: -25px;
+
+    background-image:
+        linear-gradient(
+            rgba(5,72,117,.84),
+            rgba(8,133,215,.75)
+        ),
+        url("images/banner.jpg");
+
+    background-position: center;
+    background-size: cover;
+
+    filter: blur(4px);
+
+    transform: scale(1.05);
+
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+/* CONTACT */
+
+.contact {
+    padding: 70px 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.08);
+}
+
+.card h2 {
+    color: #0878c9;
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    padding: 17px 0;
+    border-bottom: 1px solid #e4edf4;
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-item strong {
+    display: block;
+    color: #0878c9;
+    margin-bottom: 5px;
+}
+
+.contact-item a {
+    color: #405970;
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    color: #0878c9;
+}
+
+/* SOCIAL */
+
+.social {
+    margin-top: 25px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.social a {
+    text-decoration: none;
+    background: #0878c9;
+    color: white;
+    padding: 11px 17px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.social a:hover {
+    background: #055b99;
+}
+
+/* CTA */
+
+.cta {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.wa-button {
+    display: inline-block;
+    background: #25D366;
+    color: white;
+    padding: 15px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.wa-button:hover {
+    transform: translateY(-2px);
+}
+
+/* FOOTER */
+
+footer {
+    background: #062f4d;
+    color: white;
+    padding: 35px 20px;
+    text-align: center;
+}
+
+footer p {
+    color: #cbddea;
+    margin: 5px;
+}
+
+/* MOBILE */
+
+@media(max-width:850px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+
+        position: absolute;
+        top: 79px;
+        left: 0;
+        right: 0;
+
+        background: white;
+
+        flex-direction: column;
+
+        padding: 15px 20px;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    nav a {
+        text-align: center;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+}
+
+@media(max-width:500px) {
+
+    .logo-area img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .logo-text h2 {
+        font-size: 17px;
+    }
+
+    .logo-text p {
+        font-size: 10px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="navbar">
+
+<div class="logo-area">
+
+<img src="images/logo.png" alt="Logo KSP KOPKARDIOS">
+
+<div class="logo-text">
+
+<h2>KSP KOPKARDIOS</h2>
+
+<p>Koperasi Simpan Pinjam</p>
+
+</div>
+
+</div>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<nav id="menu">
+
+<a href="index.html">Beranda</a>
+
+<a href="profil.html">Profil</a>
+
+<a href="layanan.html">Layanan</a>
+
+<a href="berita.html">Berita</a>
+
+<a href="galeri.html">Galeri</a>
+
+<a href="kontak.html" class="active">Kontak</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Hubungi Kami</h1>
+
+<p>KSP KOPKARDIOS siap melayani dan memberikan informasi kepada Anda.</p>
+
+</div>
+
+</section>
+
+
+<section class="contact">
+
+<div class="container">
+
+<div class="contact-grid">
+
+
+<div class="card">
+
+<h2>Informasi Kontak</h2>
+
+<div class="contact-item">
+
+<strong>📞 Telepon / WhatsApp</strong>
+
+<a href="https://wa.me/6281339362985" target="_blank">
+0813-3936-2985
+</a>
+
+</div>
+
+
+<div class="contact-item">
+
+<strong>✉️ Email</strong>
+
+<a href="mailto:kopkardios@gmail.com">
+kopkardios@gmail.com
+</a>
+
+</div>
+
+
+<div class="contact-item">
+
+<strong>📷 Instagram</strong>
+
+<a href="https://instagram.com/kopkardios_rtg" target="_blank">
+@kopkardios_rtg
+</a>
+
+</div>
+
+
+<div class="contact-item">
+
+<strong>▶️ YouTube</strong>
+
+<a
+href="https://youtube.com/@kopkardios_rtg23?si=PpyzGsLPqguc129e"
+target="_blank">
+
+KSP KOPDIT KOPKARDIOS
+
+</a>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h2>Hubungi KSP KOPKARDIOS</h2>
+
+<p>
+Untuk informasi mengenai layanan, simpanan,
+pinjaman maupun informasi lainnya, silakan
+menghubungi kami melalui WhatsApp.
+</p>
+
+<div class="cta">
+
+<a
+class="wa-button"
+href="https://wa.me/6281339362985"
+target="_blank">
+
+💬 Chat WhatsApp Sekarang
+
+</a>
+
+</div>
+
+
+<div class="social">
+
+<a href="https://instagram.com/kopkardios_rtg"
+target="_blank">
+
+Instagram
+
+</a>
+
+<a
+href="https://youtube.com/@kopkardios_rtg23?si=PpyzGsLPqguc129e"
+target="_blank">
+
+YouTube
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p><strong>KSP KOPKARDIOS</strong></p>
+
+<p>
+Koperasi Simpan Pinjam
+</p>
+
+<p>
+© 2026 KSP KOPKARDIOS. Semua Hak Dilindungi.
+</p>
+
+</footer>
+
+
+<script>
+
+function toggleMenu() {
+
+document.getElementById("menu").classList.toggle("show");
+
+}
+
+</script>
+
+</body>
+
+</html>
